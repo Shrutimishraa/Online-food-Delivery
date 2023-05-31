@@ -1,13 +1,13 @@
 {
-  "name": "dynamic_web",
+  "name": "food",
   "version": "1.0.0",
-  "description": "this project is learning purpose nodejs",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/app.js -e js,hbs"
   },
-  "author": "rohit kawade",
+  "author": "shruti mishra",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",

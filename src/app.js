@@ -7,15 +7,15 @@ const session=require('express-session');
 const fileUpload = require('express-fileupload');
 const { handlebars } = require('hbs');
 require("./handlebar")//this hbs user made handlebars
-const app=express();
+const app = express();
 app.use(fileUpload())
 app.use(session({
     secret:"restorent_datails"
 }))
+// to accept json in rest
 app.use(bodyParser.urlencoded({
     extended:true
 }))
-
 app.use('',route)
 //static folder
 app.use("/static",express.static("public"));
@@ -24,6 +24,8 @@ app.set("view engine",'hbs')
 app.set("views",'views')
 //app.set("views","")
 hbs.registerPartials('views/partials')
+
+// mongo connect 
 
 let connectionString = "mongodb+srv://shruti19122001:82AfZz7gk69O8IEV@cluster0.1sv5gai.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(connectionString)
@@ -35,8 +37,9 @@ db.on("connected",()=>{
 db.on("error",()=>{
     console.log("error")
 })
-
+ 
 mongoose.connect
-app.listen(5656,()=>{
+
+app.listen(3000,()=>{
     console.log('server is start..')
 })
